@@ -26,13 +26,13 @@ public class Code_04_QuickSort {
 		while (l < more) {
 			if (arr[l] < arr[r]) {
 				swap(arr, ++less, l++);
-			} else if (arr[l] > arr[r]) {
+			} else if (arr[l] > arr[r]) { // 没有处理最后一个 x
 				swap(arr, --more, l);
 			} else {
 				l++;
 			}
 		}
-		swap(arr, more, r);
+		swap(arr, more, r); // 最后一个 x
 		return new int[] { less + 1, more };
 	}
 

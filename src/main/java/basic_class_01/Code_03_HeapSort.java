@@ -20,7 +20,7 @@ public class Code_03_HeapSort {
 	}
 
 	public static void heapInsert(int[] arr, int index) {
-		while (arr[index] > arr[(index - 1) / 2]) {
+		while (arr[index] > arr[(index - 1) / 2]) {  // 往上换形成大根堆
 			swap(arr, index, (index - 1) / 2);
 			index = (index - 1) / 2;
 		}
@@ -29,6 +29,8 @@ public class Code_03_HeapSort {
 	public static void heapify(int[] arr, int index, int size) {
 		int left = index * 2 + 1;
 		while (left < size) {
+			// 找子树的最大值，然后交换
+			// 右孩子不越界，比较左右孩子的值大小
 			int largest = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
 			largest = arr[largest] > arr[index] ? largest : index;
 			if (largest == index) {
