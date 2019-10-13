@@ -11,14 +11,14 @@ public class Code_11_MaxGap {
 		int len = nums.length;
 		int min = Integer.MAX_VALUE;
 		int max = Integer.MIN_VALUE;
-		for (int i = 0; i < len; i++) {
+		for (int i = 0; i < len; i++) {  // 找最小值、最大值
 			min = Math.min(min, nums[i]);
 			max = Math.max(max, nums[i]);
 		}
 		if (min == max) {
 			return 0;
 		}
-		boolean[] hasNum = new boolean[len + 1];
+		boolean[] hasNum = new boolean[len + 1];  // 存是否有数
 		int[] maxs = new int[len + 1];
 		int[] mins = new int[len + 1];
 		int bid = 0;
@@ -40,6 +40,7 @@ public class Code_11_MaxGap {
 		return res;
 	}
 
+	/** 找区间 */
 	public static int bucket(long num, long len, long min, long max) {
 		return (int) ((num - min) * len / (max - min));
 	}

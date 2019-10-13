@@ -6,6 +6,9 @@ import java.util.Stack;
 
 public class Code_03_StackAndQueueConvert {
 
+	/** 两个栈实现一个队列
+	 倒腾两次就行。
+	 */
 	public static class TwoStacksQueue {
 		private Stack<Integer> stackPush;
 		private Stack<Integer> stackPop;
@@ -20,7 +23,7 @@ public class Code_03_StackAndQueueConvert {
 		}
 
 		public int poll() {
-			if (stackPop.empty() && stackPush.empty()) {
+			if (stackPop.empty() && stackPush.empty()) { // 第二个队列是否为空判断，为空才加数。
 				throw new RuntimeException("Queue is empty!");
 			} else if (stackPop.empty()) {
 				while (!stackPush.empty()) {
@@ -42,6 +45,7 @@ public class Code_03_StackAndQueueConvert {
 		}
 	}
 
+	/** 两个队列实现一个栈：关键在于队列最后一个返回，两个队列交换。 */
 	public static class TwoQueuesStack {
 		private Queue<Integer> queue;
 		private Queue<Integer> help;

@@ -36,9 +36,10 @@ public class Code_01_Array_To_Stack_Queue {
 		}
 	}
 
+	/** 实现队列，end到底了又跳到头的位置。数组是循环数组。 */
 	public static class ArrayQueue {
 		private Integer[] arr;
-		private Integer size;
+		private Integer size; // size 记录个数
 		private Integer first;
 		private Integer last;
 

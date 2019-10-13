@@ -71,6 +71,7 @@ public class Code_09_Comparator {
 		Arrays.sort(students, new IdAscendingComparator());
 		printStudents(students);
 
+		System.out.println("***********");
 		Arrays.sort(students, new IdDescendingComparator());
 		printStudents(students);
 
