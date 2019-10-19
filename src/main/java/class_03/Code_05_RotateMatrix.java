@@ -7,20 +7,22 @@ public class Code_05_RotateMatrix {
 		int tC = 0;
 		int dR = matrix.length - 1;
 		int dC = matrix[0].length - 1;
+		/** while 循环换到内层 */
 		while (tR < dR) {
 			rotateEdge(matrix, tR++, tC++, dR--, dC--);
 		}
 	}
 
-	public static void rotateEdge(int[][] m, int tR, int tC, int dR, int dC) {
-		int times = dC - tC; 
+	/** 转圈圈，四个点交换 */
+	public static void rotateEdge(int[][] m, int a, int b, int c, int d) {
+		int times = d - b;
 		int tmp = 0;
 		for (int i = 0; i != times; i++) {
-			tmp = m[tR][tC + i];
-			m[tR][tC + i] = m[dR - i][tC];
-			m[dR - i][tC] = m[dR][dC - i];
-			m[dR][dC - i] = m[tR + i][dC];
-			m[tR + i][dC] = tmp;
+			tmp = m[a][b + i];
+			m[a][b + i] = m[c - i][b];
+			m[c - i][b] = m[c][d - i];
+			m[c][d - i] = m[a + i][d];
+			m[a + i][d] = tmp;
 		}
 	}
 
