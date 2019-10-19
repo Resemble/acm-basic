@@ -13,7 +13,7 @@ public class Code_05_RotateMatrix {
 		}
 	}
 
-	/** 转圈圈，四个点交换 */
+	/** 转圈圈，四个点交换 左上(a,b) 右下(c,d) */
 	public static void rotateEdge(int[][] m, int a, int b, int c, int d) {
 		int times = d - b;
 		int tmp = 0;
