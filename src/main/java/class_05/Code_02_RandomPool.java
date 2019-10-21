@@ -5,6 +5,7 @@ import java.util.HashMap;
 public class Code_02_RandomPool {
 
 	public static class Pool<K> {
+		/** key 到 index 一个 hashMap，index 到 key 一个 hashMap */
 		private HashMap<K, Integer> keyIndexMap;
 		private HashMap<Integer, K> indexKeyMap;
 		private int size;
@@ -22,6 +23,7 @@ public class Code_02_RandomPool {
 			}
 		}
 
+		/** 中间被删除的将 key 删除，然后用最后一个 key 来补。size-- */
 		public void delete(K key) {
 			if (this.keyIndexMap.containsKey(key)) {
 				int deleteIndex = this.keyIndexMap.get(key);
