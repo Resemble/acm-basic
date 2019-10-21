@@ -1,5 +1,7 @@
 package class_04;
 
+/** 后继节点，先序遍历（左中右）后的一个节点 */
+/** 规律：一个节点有右子树，就有有指数的最左。其他就是往上找，找到当前节点是它父亲节点的左孩子 */
 public class Code_03_SuccessorNode {
 
 	public static class Node {

@@ -19,11 +19,13 @@ public class Code_06_IsBalancedTree {
 		return res[0];
 	}
 
+	/** res 数组来传对象 */
 	public static int getHeight(Node head, int level, boolean[] res) {
 		if (head == null) {
 			return level;
 		}
 		int lH = getHeight(head.left, level + 1, res);
+		/** 左树不平衡，直接不断往上不平衡 */
 		if (!res[0]) {
 			return level;
 		}

@@ -41,6 +41,7 @@ public class Code_01_PreInPosTraversal {
 		System.out.print(head.value + " ");
 	}
 
+	/** 栈，先压右，再压左 */
 	public static void preOrderUnRecur(Node head) {
 		System.out.print("pre-order: ");
 		if (head != null) {
@@ -66,10 +67,12 @@ public class Code_01_PreInPosTraversal {
 			Stack<Node> stack = new Stack<Node>();
 			while (!stack.isEmpty() || head != null) {
 				if (head != null) {
+					/** 找到最底下 */
 					stack.push(head);
 					head = head.left;
 				} else {
 					head = stack.pop();
+					/** 打印左边的，从下到上，然后用右边 */
 					System.out.print(head.value + " ");
 					head = head.right;
 				}
