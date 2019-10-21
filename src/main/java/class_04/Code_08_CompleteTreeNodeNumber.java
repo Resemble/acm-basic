@@ -19,14 +19,17 @@ public class Code_08_CompleteTreeNodeNumber {
 		return bs(head, 1, mostLeftLevel(head, 1));
 	}
 
-	public static int bs(Node node, int l, int h) {
-		if (l == h) {
+	public static int bs(Node node, int level, int h) {
+		if (level == h) {
 			return 1;
 		}
-		if (mostLeftLevel(node.right, l + 1) == h) {
-			return (1 << (h - l)) + bs(node.right, l + 1, h);
+		/** 右子树的最左边界深度 */
+		/** 左树的个数 + 右树的个数 */
+		if (mostLeftLevel(node.right, level + 1) == h) {
+			return (1 << (h - level)) + bs(node.right, level + 1, h);
 		} else {
-			return (1 << (h - l - 1)) + bs(node.left, l + 1, h);
+			/** 右树的个数 + 左树的个数 */
+			return (1 << (h - level - 1)) + bs(node.left, level + 1, h);
 		}
 	}
 

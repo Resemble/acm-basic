@@ -15,6 +15,7 @@ public class Code_07_IsBSTAndCBT {
 		}
 	}
 
+	/** 二叉搜索树可以用二叉树的中序遍历非递归判断，一个值记录之前的值，然后进行比较 */
 	public static boolean isBST(Node head) {
 		if (head == null) {
 			return true;
@@ -59,6 +60,10 @@ public class Code_07_IsBSTAndCBT {
 			head = queue.poll();
 			l = head.left;
 			r = head.right;
+			/** 开启判断
+			 * 1.有右孩子，没有左孩子。直接false。
+			 * 2.不是左右孩子都全。后面所有节点都必须是叶节点（没有子树）。
+			 * */
 			if ((leaf && (l != null || r != null)) || (l == null && r != null)) {
 				return false;
 			}
@@ -70,6 +75,12 @@ public class Code_07_IsBSTAndCBT {
 			} else {
 				leaf = true;
 			}
+			/** 最后一个 else 可以用下面这个判断，只不过上面的简单少条件
+			 * 这里 (l == null && r != null) 已经表示左孩子为空，右孩子一定为空
+			if (l == null || r == null) {
+				leaf = true;
+			}
+			 */
 		}
 		return true;
 	}
