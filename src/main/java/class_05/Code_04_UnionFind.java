@@ -6,12 +6,12 @@ import java.util.List;
 public class Code_04_UnionFind {
 
 	public static class Node {
-		// whatever you like
+		// whatever you like  String , Int , Char
 	}
 
 	public static class UnionFindSet {
-		public HashMap<Node, Node> fatherMap;
-		public HashMap<Node, Integer> sizeMap;
+		public HashMap<Node, Node> fatherMap;  // Key : child, value : father
+		public HashMap<Node, Integer> sizeMap; // father 有多少个 child
 
 		public UnionFindSet() {
 			fatherMap = new HashMap<Node, Node>();

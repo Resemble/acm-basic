@@ -3,14 +3,14 @@ package class_07;
 public class Code_01_TrieTree {
 
 	public static class TrieNode {
-		public int path;
-		public int end;
+		public int path; // 每个节点被划过了多少次
+		public int end; // 有多少节点是以它结尾的
 		public TrieNode[] nexts;
 
 		public TrieNode() {
 			path = 0;
 			end = 0;
-			nexts = new TrieNode[26];
+			nexts = new TrieNode[26]; // a - z 的路  或者 map 结构
 		}
 	}
 
@@ -36,6 +36,7 @@ public class Code_01_TrieTree {
 				node = node.nexts[index];
 				node.path++;
 			}
+			/** 最后一个节点 end++ */
 			node.end++;
 		}
 
