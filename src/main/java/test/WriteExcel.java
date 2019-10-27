@@ -1,4 +1,4 @@
-package class_06;
+package test;
 import jxl.CellView;
 import jxl.Workbook;
 import jxl.WorkbookSettings;

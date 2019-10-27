@@ -1,4 +1,4 @@
-package class_06;
+package test;
 
 import jxl.Cell;
 import jxl.Sheet;
