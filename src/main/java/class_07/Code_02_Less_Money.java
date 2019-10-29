@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 
 public class Code_02_Less_Money {
 
+	/** 总是拿出两个最小的，和放入堆，然后重复。 */
 	public static int lessMoney(int[] arr) {
 		PriorityQueue<Integer> pQ = new PriorityQueue<>();
 		for (int i = 0; i < arr.length; i++) {

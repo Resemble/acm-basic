@@ -24,13 +24,14 @@ public class Code_06_BestArrange {
 
 	}
 
-	public static int bestArrange(Program[] programs, int start) {
+	public static int bestArrange(Program[] programs, int cur) {
 		Arrays.sort(programs, new ProgramComparator());
 		int result = 0;
 		for (int i = 0; i < programs.length; i++) {
-			if (start <= programs[i].start) {
+			/** cur 当前时刻 */
+			if (cur <= programs[i].start) {
 				result++;
-				start = programs[i].end;
+				cur = programs[i].end;
 			}
 		}
 		return result;

@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 
 public class Code_03_IPO {
 	public static class Node {
+		/** p收益，c花费 */
 		public int p;
 		public int c;
 
@@ -47,9 +48,11 @@ public class Code_03_IPO {
 			while (!minCostQ.isEmpty() && minCostQ.peek().c <= W) {
 				maxProfitQ.add(minCostQ.poll());
 			}
+			/** 做不到k个项目就得停 */
 			if (maxProfitQ.isEmpty()) {
 				return W;
 			}
+			/** 获得收益最高的项目 */
 			W += maxProfitQ.poll().p;
 		}
 		return W;
